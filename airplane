@@ -1,1 +1,3 @@
+private boolean[][] seatArrayFirstClass = new boolean[5][4];
 
+private boolean[][] seatArrayEco = new boolean[15][6];
