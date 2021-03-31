@@ -1,1 +1,13 @@
-
+public class Airplane() {
+  private boolean[][] seatArrayFirstClass;
+  
+  private boolean[][] seatArrayEco;
+  
+  public boolean checkAvailability() {
+    
+  }
+  
+  public void addPassenger() {
+  
+  }
+}
