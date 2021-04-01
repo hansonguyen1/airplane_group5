@@ -1,1 +1,10 @@
+import java.util.Scanner;
+
+public class AirplaneMenu() {
+public static void main(String[] args)
+{
+Scanner input = new Scanner(System.in);
+Airplane plane = new Airplane();
+
+while (true) {
 
