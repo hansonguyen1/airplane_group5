@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class AirplaneMenu() {
+public class AirplaneMenu {
   public static void main(String[] args) {
 
     Scanner input = new Scanner(System.in);
@@ -27,10 +27,11 @@ public class AirplaneMenu() {
               else if (input.next().equals("2")){
                   firstClass = false;
                   break;
+                  }
               else {
                   System.out.println("Not a valid value. Please enter the correct values pertaining to the correct classes");
                   }
-              }
+                  }
        //asks for the passenger number and validates it
       while(true) {
           System.out.println("How many passengers are going to be added?");
@@ -44,7 +45,7 @@ public class AirplaneMenu() {
       }
 
       //asks for seating prefernces and validates it
-      if(firstClass)
+      if(firstClass){
           while(true){
                System.out.printnln("What is your seating preference? Enter a '1' for the aisle seat and a '3' for the window seat");
                preference = input.nextInt();
@@ -55,28 +56,27 @@ public class AirplaneMenu() {
                   System.out.println("Invalid number");
                 }
              }
-          }else{
-              while(true) {
+          }
+       else{
+          while(true) {
                 System.out.println("What is your seating preference? Enter a '1' for aisle seat and a '3' for the window seat");
                 preference = input.nextInt();
                 if(prefernce == 1 || preference == 2 || preference == 3) {
                   break;
-                }else{
+                }
+                else{
                   System.out.println("Invalid Number");
                 }
               }
          }
-     
-                  //adds passenger if possible
+                       //adds passenger if possible
                   if (plane.isOpen(boardingClass, preference, passengers)) {
                       plane.addPassenger(boardingClass, preference, passengers);
                   }
                   else{
                       System.out.println("No match was found.");
                   }
-
                   //shows seating
-              }
               
               else if (decision == 2) {
                   System.out.println(plane.showSeating());
