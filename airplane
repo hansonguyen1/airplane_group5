@@ -22,7 +22,7 @@ public class Airplane {
     }
 
     /**
-     * Adds passenger based on what class, number of passengers, and seat preference
+     * Checks if the seat is open
      * @param firstClass boolean variable of whether first class or not
      * @param numPassengers integer number of passengers
      * @param typeOfSeat seat preference (aisle, center, or window)
