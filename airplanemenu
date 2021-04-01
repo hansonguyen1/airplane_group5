@@ -29,6 +29,43 @@ public class AirplaneMenu() {
                   break;
               else {
                   System.out.println("Not a valid value. Please enter the correct values pertaining to the correct classes");
+                  }
+              }
+       //asks for the passenger number and validates it
+      while(true) {
+          System.out.println("How many passengers are going to be added?");
+          numPassengers= input.nextInt();
+          if(numPassengers == 1 || numPassengers == 2 || (numPassengers == 3 && !firstClass)){
+            break;
+          }
+          else {
+            System.out.print("Invalid number of passengers");
+          }
+      }
+
+      //asks for seating prefernces and validates it
+      if(firstClass)
+          while(true){
+               System.out.printnln("What is your seating preference? Enter a '1' for the aisle seat and a '3' for the window seat");
+               preference = input.nextInt();
+               if(preference == 1 || preference == 3) {
+                 break;
+               }
+               else{
+                  System.out.println("Invalid number");
+                }
+             }
+          }else{
+              while(true) {
+                System.out.println("What is your seating preference? Enter a '1' for aisle seat and a '3' for the window seat");
+                preference = input.nextInt();
+                if(prefernce == 1 || preference == 2 || preference == 3) {
+                  break;
+                }else{
+                  System.out.println("Invalid Number");
+                }
+              }
+         }
      
                   //adds passenger if possible
                   if (plane.isOpen(boardingClass, preference, passengers)) {
