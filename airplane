@@ -37,8 +37,14 @@ public class Airplane {
                         if (typeOfSeat.equals("aisle") && (j == 1 || j == 2)) {   
                             return true;
                         }
+                        else {
+                            return false;
+                        }
                         if (typeOfSeat.equals("window") && (j == 0 || j == 3)) {
                             return true;
+                        }
+                        else {
+                            return false;
                         }
                     }
                     // Two passengers
@@ -46,14 +52,20 @@ public class Airplane {
                         if (!seatArrayFirstClass[i][0] && !seatArrayFirstClass[i][1]) {
                             return true;
                         }
+                        else {
+                            return false;
+                        }
                         if (!seatArrayFirstClass[i][2] && !seatArrayFirstClass[i][3]) {
                             return true;
+                        }
+                        else {
+                            return false;
                         }
                     }
                 }
             }
         // Add to economy
-        } else {
+        } else{
             for (int i = 0; i < seatArrayEco.length; i++) {
                 for (int j = 0; j < seatArrayEco[i].length; j++) {
                     // One passenger
@@ -61,11 +73,20 @@ public class Airplane {
                         if (typeOfSeat.equals("aisle") && (j == 2 || j == 3)) {
                             return true;
                         }
+                        else {
+                            return false;
+                        }
                         if (typeOfSeat.equals("center") && (j == 1 || j == 4)) {
                             return true;
                         }
+                        else {
+                            return false;
+                        }
                         if (typeOfSeat.equals("window") && (j == 0 || j == 5)) {
                             return true;
+                        }
+                        else {
+                            return false;
                         }
                     }
                     // Two passengers
@@ -74,8 +95,14 @@ public class Airplane {
                             if (j == 2 && !seatArrayEco[i][1]) {
                                 return true;
                             }
+                            else {
+                                return false;
+                            }
                             if (j == 3 && !seatArrayEco[i][4]) {
                                 return true;
+                            }
+                            else {
+                                return false;
                             }
                         }
                         if (typeOfSeat.equals("center") && !seatArrayEco[i][j] && (j == 1 || j == 4)) {
@@ -83,10 +110,16 @@ public class Airplane {
                                 if (!seatArrayEco[i][0]) {
                                     return true;
                                 }
+                                else {
+                                    return false;
+                                }
                             }
                             if (j == 4 && (!seatArrayEco[i][3] || !seatArrayEco[i][5])) {
                                 if (!seatArrayEco[i][3]) {
                                     return true;
+                                }
+                                else {
+                                    return false;
                                 }
                             }
                         }
@@ -94,8 +127,14 @@ public class Airplane {
                             if (j == 0 && !seatArrayEco[i][1]) {
                                 return true;
                             }
+                            else {
+                                return false;
+                            }
                             if (j == 5 && !seatArrayEco[i][4]) {
                                 return true;
+                            }
+                            else {
+                                return false;
                             }
                         }
                     }
@@ -104,8 +143,14 @@ public class Airplane {
                         if (!seatArrayEco[i][0] && !seatArrayEco[i][1] && !seatArrayEco[i][2]) {
                             return true;
                         }
+                        else {
+                            return false;
+                        }
                         if (!seatArrayEco[i][3] && !seatArrayEco[i][4] && !seatArrayEco[i][5]) {
                             return true;
+                        }
+                        else {
+                            return false;
                         }
                     }
                 }
