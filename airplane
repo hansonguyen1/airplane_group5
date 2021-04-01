@@ -21,6 +21,126 @@ public class Airplane {
         }
     }
 
+    public boolean isOpen (boolean firstClass, int numPassengers, String typeOfSeat) {
+        // Add to first class
+        if (firstClass) {
+            for (int i = 0; i < seatArrayFirstClass.length; i++) {
+                for (int j = 0; j < seatArrayFirstClass[i].length; j++) {
+                    // One passenger
+                    if (!seatArrayFirstClass[i][j] && numPassengers == 1) {
+                        if (typeOfSeat.equals("aisle") && (j == 1 || j == 2)) {
+                            seatArrayFirstClass[i][j] = true;
+                            return true;
+                        }
+                        if (typeOfSeat.equals("window") && (j == 0 || j == 3)) {
+                            seatArrayFirstClass[i][j] = true;
+                            return true;
+                        }
+                    }
+                    // Two passengers
+                    if (numPassengers == 2) {
+                        if (!seatArrayFirstClass[i][0] && !seatArrayFirstClass[i][1]) {
+                            seatArrayFirstClass[i][0] = true;
+                            seatArrayFirstClass[i][1] = true;
+                            return true;
+                        }
+                        if (!seatArrayFirstClass[i][2] && !seatArrayFirstClass[i][3]) {
+                            seatArrayFirstClass[i][2] = true;
+                            seatArrayFirstClass[i][3] = true;
+                            return true;
+                        }
+                    }
+                }
+            }
+        // Add to economy
+        } else {
+            for (int i = 0; i < seatArrayEco.length; i++) {
+                for (int j = 0; j < seatArrayEco[i].length; j++) {
+                    // One passenger
+                    if (!seatArrayEco[i][j] && numPassengers == 1) {
+                        if (typeOfSeat.equals("aisle") && (j == 2 || j == 3)) {
+                            seatArrayEco[i][j] = true;
+                            return true;
+                        }
+                        if (typeOfSeat.equals("center") && (j == 1 || j == 4)) {
+                            seatArrayEco[i][j] = true;
+                            return true;
+                        }
+                        if (typeOfSeat.equals("window") && (j == 0 || j == 5)) {
+                            seatArrayEco[i][j] = true;
+                            return true;
+                        }
+                    }
+                    // Two passengers
+                    if (numPassengers == 2) {
+                        if (typeOfSeat.equals("aisle") && !seatArrayEco[i][j] && (j == 2 || j == 3)) {
+                            if (j == 2 && !seatArrayEco[i][1]) {
+                                seatArrayEco[i][2] = true;
+                                seatArrayEco[i][1] = true;
+                                return true;
+                            }
+                            if (j == 3 && !seatArrayEco[i][4]) {
+                                seatArrayEco[i][3] = true;
+                                seatArrayEco[i][4] = true;
+                                return true;
+                            }
+                        }
+                        if (typeOfSeat.equals("center") && !seatArrayEco[i][j] && (j == 1 || j == 4)) {
+                            if (j == 1 && (!seatArrayEco[i][0] || !seatArrayEco[i][2])) {
+                                if (!seatArrayEco[i][0]) {
+                                    seatArrayEco[i][0] = true;
+                                    seatArrayEco[i][1] = true;
+                                    return true;
+                                }
+                                else {
+                                    seatArrayEco[i][2] = true;
+                                    seatArrayEco[i][1] = true;
+                                    return true;
+                                }
+                            }
+                            if (j == 4 && (!seatArrayEco[i][3] || !seatArrayEco[i][5])) {
+                                if (!seatArrayEco[i][3]) {
+                                    seatArrayEco[i][3] = true;
+                                    seatArrayEco[i][4] = true;
+                                    return true;
+                                }
+                                else {
+                                    seatArrayEco[i][5] = true;
+                                    seatArrayEco[i][4] = true;
+                                    return true;
+                                }
+                            }
+                        }
+                        if (typeOfSeat.equals("window") && !seatArrayEco[i][j] && (j == 0 || j == 5)) {
+                            if (j == 0 && !seatArrayEco[i][1]) {
+                                seatArrayEco[i][0] = true;
+                                seatArrayEco[i][1] = true;
+                                return true;
+                            }
+                            if (j == 5 && !seatArrayEco[i][4]) {
+                                seatArrayEco[i][5] = true;
+                                seatArrayEco[i][4] = true;
+                                return true;
+                            }
+                        }
+                    }
+                    // Three passengers
+                    if (numPassengers == 3) {
+                        if (!seatArrayEco[i][0] && !seatArrayEco[i][1] && !seatArrayEco[i][2]) {
+                            seatArrayEco[i][0] = true;
+                            seatArrayEco[i][1] = true;
+                            seatArrayEco[i][2] = true;
+                            return true;
+                        }
+                        if (!seatArrayEco[i][3] && !seatArrayEco[i][4] && !seatArrayEco[i][5]) {
+                            seatArrayEco[i][3] = true;
+                            seatArrayEco[i][4] = true;
+                            seatArrayEco[i][5] = true;
+                            return true;
+                        }
+                    }
+                }
+    
     /**
      * Adds passenger based on what class, number of passengers, and seat preference
      * @param firstClass boolean variable of whether first class or not
