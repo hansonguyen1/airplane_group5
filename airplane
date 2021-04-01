@@ -37,10 +37,7 @@ public class Airplane {
                         if (typeOfSeat.equals("aisle") && (j == 1 || j == 2)) {   
                             return true;
                         }
-                        else {
-                            return false;
-                        }
-                        if (typeOfSeat.equals("window") && (j == 0 || j == 3)) {
+                        else if (typeOfSeat.equals("window") && (j == 0 || j == 3)) {
                             return true;
                         }
                         else {
@@ -52,10 +49,7 @@ public class Airplane {
                         if (!seatArrayFirstClass[i][0] && !seatArrayFirstClass[i][1]) {
                             return true;
                         }
-                        else {
-                            return false;
-                        }
-                        if (!seatArrayFirstClass[i][2] && !seatArrayFirstClass[i][3]) {
+                        else if (!seatArrayFirstClass[i][2] && !seatArrayFirstClass[i][3]) {
                             return true;
                         }
                         else {
@@ -73,16 +67,10 @@ public class Airplane {
                         if (typeOfSeat.equals("aisle") && (j == 2 || j == 3)) {
                             return true;
                         }
-                        else {
-                            return false;
-                        }
-                        if (typeOfSeat.equals("center") && (j == 1 || j == 4)) {
+                        else if (typeOfSeat.equals("center") && (j == 1 || j == 4)) {
                             return true;
                         }
-                        else {
-                            return false;
-                        }
-                        if (typeOfSeat.equals("window") && (j == 0 || j == 5)) {
+                        else if (typeOfSeat.equals("window") && (j == 0 || j == 5)) {
                             return true;
                         }
                         else {
@@ -95,10 +83,7 @@ public class Airplane {
                             if (j == 2 && !seatArrayEco[i][1]) {
                                 return true;
                             }
-                            else {
-                                return false;
-                            }
-                            if (j == 3 && !seatArrayEco[i][4]) {
+                            else if (j == 3 && !seatArrayEco[i][4]) {
                                 return true;
                             }
                             else {
@@ -114,7 +99,7 @@ public class Airplane {
                                     return false;
                                 }
                             }
-                            if (j == 4 && (!seatArrayEco[i][3] || !seatArrayEco[i][5])) {
+                            else if (j == 4 && (!seatArrayEco[i][3] || !seatArrayEco[i][5])) {
                                 if (!seatArrayEco[i][3]) {
                                     return true;
                                 }
@@ -122,15 +107,15 @@ public class Airplane {
                                     return false;
                                 }
                             }
+                            else {
+                                return false
+                            }
                         }
                         if (typeOfSeat.equals("window") && !seatArrayEco[i][j] && (j == 0 || j == 5)) {
                             if (j == 0 && !seatArrayEco[i][1]) {
                                 return true;
                             }
-                            else {
-                                return false;
-                            }
-                            if (j == 5 && !seatArrayEco[i][4]) {
+                            else if (j == 5 && !seatArrayEco[i][4]) {
                                 return true;
                             }
                             else {
@@ -143,10 +128,7 @@ public class Airplane {
                         if (!seatArrayEco[i][0] && !seatArrayEco[i][1] && !seatArrayEco[i][2]) {
                             return true;
                         }
-                        else {
-                            return false;
-                        }
-                        if (!seatArrayEco[i][3] && !seatArrayEco[i][4] && !seatArrayEco[i][5]) {
+                        else if (!seatArrayEco[i][3] && !seatArrayEco[i][4] && !seatArrayEco[i][5]) {
                             return true;
                         }
                         else {
