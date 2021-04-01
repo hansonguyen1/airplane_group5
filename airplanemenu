@@ -76,6 +76,7 @@ public class AirplaneMenu {
                   else{
                       System.out.println("No match was found.");
                   }
+         }
                   //shows seating
               
               else if (decision == 2) {
