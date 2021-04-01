@@ -219,4 +219,24 @@ public class Airplane {
             }
         }
     }
+    public String seatingDisplay(){
+      String str = "";
+      boolean done = false;
+      for (int i = 0; i < seatArrayFirstClass.length; i++) {
+          for (int j = 0; j < seatArrayFirstClass[i].length; j++) {
+              if (!seatArrayFirstClass[i][j]) {
+                  str += "0";
+                  done = true;
+              } else {
+                  str += "1";
+                  done = true;
+                  // Break out of loops once seat is assigned
+                  if (done) {
+                      break;
+                  }
+              }
+          }
+      }
+      return str;
+  }
 }
