@@ -1,3 +1,43 @@
-private boolean[][] seatArrayFirstClass = new boolean[5][4];
+private boolean firstClass;
+private int numPassengers;
+private String typeOfSeat;
 
-private boolean[][] seatArrayEco = new boolean[15][6];
+private boolean[][] seatArrayFirstClass = new boolean[4][3];
+for (int i = 0; i <= seatArrayFirstClass[].length; i++) {
+  for (int j = 0; j <= seatArrayFirstClass[][].length; j++) {
+    seatArrayFirstClass[i][j] = false;
+  }
+}
+
+private boolean[][] seatArrayEco = new boolean[14][5];
+for (int i = 0; i <= seatArrayEco[].length; i++) {
+  for (int j = 0; j <= seatArrayEco[][].length; j++) {
+    seatArrayEco[i][j] = false;
+  }
+}
+
+public boolean checkAvailability(boolean firstClass, int numPassengers, String typeOfSeat) {
+  if (firstClass) {
+    if (numPassengers == 2) {
+      for (int i = 0; i <= seatArrayFirstClass[]; i++) {
+        if ((!seatArrayFirstCLass[i][0] && !seatArrayFirstClass[i][1]) || (!seatArrayFirstCLass[i][2] && !seatArrayFirstClass[i][3]) {
+          return true;
+        }
+      }
+    }
+    else {
+      if (typeOfSeat.equals("aisle")) {
+        for (int i = 0; i <= seatArrayFirstClass[]; i++) {
+          if (!seatArrayFirstCLass[i][1] || !seatArrayFirstClass[i][2]) {
+            return true;
+        }
+      }
+      else {
+        for (int i = 0; i <= seatArrayFirstClass[]; i++) {
+          if (!seatArrayFirstCLass[i][0] || !seatArrayFirstClass[i][3]) {
+            return true;
+        }
+      }
+    }
+  }
+}
