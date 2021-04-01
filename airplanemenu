@@ -5,7 +5,27 @@ public class AirplaneMenu() {
 
     Scanner input = new Scanner(System.in);
     Airplane plane = new Airplane();
-
+    
+    //Questions the user's decision
     while (true) {
-      System.out.println(
-
+      System.out.println("Please enter the number '1' to add passengers, '2' to display spots, or '3' to exit the program.");
+      int decision = input.nextInt();
+      
+      //Add passengers
+      if (decision == 1){
+          boolean firstClass;
+          int numPassengers;
+          int preference;
+          
+          //Takes user input if valid or not
+          while(true){
+              System.out.println("Please enter the number '1' for First Class or '2' for Economy");
+              if (input.next().equals("1")){
+                  firstClass = true;
+                  break;
+              }
+              else if (input.next().equals("2")){
+                  firstClass = false;
+                  break;
+              else{
+                  System.out.println("Not a valid value. Please enter the correct values pertaining to the correct classes");
