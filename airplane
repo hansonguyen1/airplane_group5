@@ -168,9 +168,24 @@ public class Airplane {
                         }
                     }
                 }
+                
+                public String seatingDisplay(){
+                    String str = "";
+                    int count = 0;
+                    for (int i = 0; i < seatArrayFirstClass.length; i++) {
+                        for (int j = 0; j < seatArrayFirstClass[i].length; j++) {
+                            if (!seatArrayFirstClass[i][j]) {
+                            str += "0";
+                            count++;
+                        }
+                        else{
+                            str += "1";
+                            count++;
+                    
                 // Break out of loops once seat is assigned
                 if (done) {
                     break;
+                    
                 }
             }
         }
