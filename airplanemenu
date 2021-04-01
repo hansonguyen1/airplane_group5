@@ -7,4 +7,5 @@ public class AirplaneMenu() {
     Airplane plane = new Airplane();
 
     while (true) {
+      System.out.println(
 
